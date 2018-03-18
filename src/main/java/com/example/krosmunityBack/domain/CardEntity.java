@@ -1,4 +1,4 @@
-package com.example.krosmunity_back.domain;
+package com.example.krosmunityBack.domain;
 
 
 import javax.persistence.Column;

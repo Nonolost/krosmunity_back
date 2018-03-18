@@ -1,4 +1,4 @@
-package com.example.krosmunity_back;
+package com.example.krosmunityBack;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

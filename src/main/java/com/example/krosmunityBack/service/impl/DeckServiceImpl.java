@@ -1,6 +1,6 @@
-package com.example.krosmunity_back.service.impl;
+package com.example.krosmunityBack.service.impl;
 
-import com.example.krosmunity_back.service.DeckService;
+import com.example.krosmunityBack.service.DeckService;
 import org.springframework.stereotype.Service;
 
 @Service

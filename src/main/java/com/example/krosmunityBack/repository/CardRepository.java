@@ -1,6 +1,6 @@
-package com.example.krosmunity_back.repository;
+package com.example.krosmunityBack.repository;
 
-import com.example.krosmunity_back.domain.CardEntity;
+import com.example.krosmunityBack.domain.CardEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.stereotype.Repository;
