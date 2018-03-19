@@ -1,9 +1,11 @@
 package com.example.krosmunityBack.domain;
 
 
+import com.example.krosmunityBack.domain.CompositeKey.CardIdentity;
+
 import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
-import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
@@ -43,9 +45,8 @@ public class CardEntity {
     public static final String LANGUAGE_COLUMN = "language";
 
 
-    @Id
-    @Column(name = ID_COLUMN)
-    private int id;
+    @EmbeddedId
+    private CardIdentity cardIdentity;
 
     @Column(name = GOD_COLUMN)
     private int god;
@@ -86,14 +87,12 @@ public class CardEntity {
     @Column(name = IMAGE_LINK_COLUMN)
     private String imageLink;
 
-    @Column(name = LANGUAGE_COLUMN)
-    private int langage;
 
     public CardEntity() {
     }
 
-    public CardEntity(int id, int god, String name, String description, int at, int ap, int hp, int mp, boolean isSpell, String family, int rarity, int extension, boolean isToken, String imageLink, int langage) {
-        this.id = id;
+    public CardEntity(CardIdentity cardIdentity, int god, String name, String description, int at, int ap, int hp, int mp, boolean isSpell, String family, int rarity, int extension, boolean isToken, String imageLink) {
+        this.cardIdentity = cardIdentity;
         this.god = god;
         this.name = name;
         this.description = description;
@@ -107,15 +106,15 @@ public class CardEntity {
         this.extension = extension;
         this.isToken = isToken;
         this.imageLink = imageLink;
-        this.langage = langage;
     }
 
-    public int getId() {
-        return id;
+
+    public CardIdentity getCardIdentity() {
+        return cardIdentity;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setCardIdentity(CardIdentity cardIdentity) {
+        this.cardIdentity = cardIdentity;
     }
 
     public int getGod() {
@@ -220,13 +219,5 @@ public class CardEntity {
 
     public void setImageLink(String imageLink) {
         this.imageLink = imageLink;
-    }
-
-    public int getLangage() {
-        return langage;
-    }
-
-    public void setLangage(int langage) {
-        this.langage = langage;
     }
 }

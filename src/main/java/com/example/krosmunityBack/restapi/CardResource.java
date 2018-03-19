@@ -29,10 +29,5 @@ public class CardResource {
         return cardService.fetchWithSpecs();
     }
 
-    @GetMapping("/generate")
-    public void create() {
-        cardService.create(new CardEntity(1, 1, "name", "description", 1, 1, 1, 1, true, "family", 0, 2, false, "imageLink", 2));
-        cardService.create(new CardEntity(2, 1, "name", "description", 1, 1, 1, 1, false, "family", 0, 2, false, "imageLink", 2));
-    }
 
 }
