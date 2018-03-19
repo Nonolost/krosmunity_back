@@ -16,11 +16,16 @@ public class CardResource {
 
     public static final String CARD_BASE_PATH = "/card";
 
+
+    private CardService cardService;
+
     @Autowired
-    CardService cardService;
+    public CardResource(CardService cardService) {
+        this.cardService = cardService;
+    }
 
     @GetMapping
-    public List fetch() {
+    public List<CardEntity> fetch() {
         return cardService.fetchWithSpecs();
     }
 

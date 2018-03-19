@@ -5,7 +5,7 @@ import com.example.krosmunityBack.domain.CardEntity;
 import java.util.List;
 
 public interface CardService {
-   List fetchWithSpecs();
+   List<CardEntity> fetchWithSpecs();
    void create(CardEntity card);
 
 }

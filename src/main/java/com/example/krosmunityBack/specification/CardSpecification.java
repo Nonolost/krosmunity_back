@@ -18,13 +18,22 @@ public class CardSpecification {
                 if (isSpell == null) {
                     return null;
                 }
-                if (isSpell) {
-                    return builder.equal(root.get(CardEntity_.isSpell), true);
-                } else {
-                    return builder.equal(root.get(CardEntity_.isSpell), false);
-                }
+                return builder.equal(root.get(CardEntity_.isSpell), isSpell);
             }
         };
 
     }
+    public static Specification<CardEntity> filterByIsToken(Boolean isToken) {
+        return new Specification<CardEntity>() {
+            public Predicate toPredicate(Root<CardEntity> root, CriteriaQuery<?> query,
+                                         CriteriaBuilder builder) {
+                if (isToken == null) {
+                    return null;
+                }
+                return builder.equal(root.get(CardEntity_.isToken), isToken);
+            }
+        };
+
+    }
+
 }

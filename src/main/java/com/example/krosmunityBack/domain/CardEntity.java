@@ -45,49 +45,49 @@ public class CardEntity {
 
     @Id
     @Column(name = ID_COLUMN)
-    int id;
+    private int id;
 
     @Column(name = GOD_COLUMN)
-    int god;
+    private int god;
 
     @Column(name = NAME_COLUMN)
-    String name;
+    private String name;
 
     @Column(name = DESCRIPTION_COLUMN)
-    String description;
+    private String description;
 
     @Column(name = AT_COLUMN)
-    int at;
+    private int at;
 
     @Column(name = AP_COLUMN)
-    int ap;
+    private int ap;
 
     @Column(name = HP_COLUMN)
-    int hp;
+    private int hp;
 
     @Column(name = MP_COLUMN)
-    int mp;
+    private int mp;
 
     @Column(name = IS_SPELL_COLUMN)
-    boolean isSpell;
+    private boolean isSpell;
 
     @Column(name = FAMILY_COLUMN)
-    String family;
+    private String family;
 
     @Column(name = RARITY_COLUMN)
-    int rarity;
+    private int rarity;
 
     @Column(name = EXTENSION_COLUMN)
-    int extension;
+    private int extension;
 
     @Column(name = IS_TOKEN_COLUMN)
-    boolean IsToken;
+    private boolean isToken;
 
     @Column(name = IMAGE_LINK_COLUMN)
-    String imageLink;
+    private String imageLink;
 
     @Column(name = LANGUAGE_COLUMN)
-    int langage;
+    private int langage;
 
     public CardEntity() {
     }
@@ -105,7 +105,7 @@ public class CardEntity {
         this.family = family;
         this.rarity = rarity;
         this.extension = extension;
-        IsToken = isToken;
+        this.isToken = isToken;
         this.imageLink = imageLink;
         this.langage = langage;
     }
@@ -207,11 +207,11 @@ public class CardEntity {
     }
 
     public boolean isToken() {
-        return IsToken;
+        return isToken;
     }
 
     public void setToken(boolean token) {
-        IsToken = token;
+        isToken = token;
     }
 
     public String getImageLink() {

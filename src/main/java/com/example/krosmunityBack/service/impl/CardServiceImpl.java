@@ -17,7 +17,7 @@ public class CardServiceImpl implements CardService {
     CardRepository cardRepository;
 
     @Override
-    public List fetchWithSpecs() {
+    public List<CardEntity> fetchWithSpecs() {
         return cardRepository.findAll(filterBySpell(Boolean.TRUE));
     }
 
