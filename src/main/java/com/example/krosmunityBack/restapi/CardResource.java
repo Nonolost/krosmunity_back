@@ -1,9 +1,14 @@
 package com.example.krosmunityBack.restapi;
 
 import com.example.krosmunityBack.domain.CardEntity;
+import com.example.krosmunityBack.domain.CardFilter;
+import com.example.krosmunityBack.domain.DTO.CardDTO;
+import com.example.krosmunityBack.domain.mapper.CardMapper;
 import com.example.krosmunityBack.service.CardService;
+import fr.xebia.extras.selma.Selma;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,7 +20,7 @@ public class CardResource {
 
 
     public static final String CARD_BASE_PATH = "/card";
-
+    CardMapper mapper = Selma.builder(CardMapper.class).build();
 
     private CardService cardService;
 
@@ -24,10 +29,11 @@ public class CardResource {
         this.cardService = cardService;
     }
 
-    @GetMapping
-    public List<CardEntity> fetch() {
-        return cardService.fetchWithSpecs();
-    }
+    @PostMapping
+    public List<CardDTO> fetch(@RequestBody CardFilter cardFilter) {
+        System.out.println(cardService.fetchWithSpecs(cardFilter).getContent());
 
+        return mapper.asCardDTO(cardService.fetchWithSpecs(cardFilter).getContent());
+    }
 
 }

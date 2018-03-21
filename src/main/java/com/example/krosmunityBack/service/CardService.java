@@ -1,12 +1,9 @@
 package com.example.krosmunityBack.service;
 
 import com.example.krosmunityBack.domain.CardEntity;
-
-import java.util.List;
+import com.example.krosmunityBack.domain.CardFilter;
+import org.springframework.data.domain.Page;
 
 public interface CardService {
-    List<CardEntity> fetchWithSpecs();
-
-    void create(CardEntity card);
-
+    Page<CardEntity> fetchWithSpecs(CardFilter cardFilter);
 }

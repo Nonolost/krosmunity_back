@@ -173,7 +173,7 @@ public class CardEntity {
         this.mp = mp;
     }
 
-    public boolean isSpell() {
+    public boolean getIsSpell() {
         return isSpell;
     }
 
@@ -205,7 +205,7 @@ public class CardEntity {
         this.extension = extension;
     }
 
-    public boolean isToken() {
+    public boolean getIsToken() {
         return isToken;
     }
 
