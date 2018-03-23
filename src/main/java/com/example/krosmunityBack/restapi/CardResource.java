@@ -1,6 +1,5 @@
 package com.example.krosmunityBack.restapi;
 
-import com.example.krosmunityBack.domain.CardEntity;
 import com.example.krosmunityBack.domain.CardFilter;
 import com.example.krosmunityBack.domain.DTO.CardDTO;
 import com.example.krosmunityBack.domain.mapper.CardMapper;
@@ -20,7 +19,7 @@ public class CardResource {
 
 
     public static final String CARD_BASE_PATH = "/card";
-    CardMapper mapper = Selma.builder(CardMapper.class).build();
+    private CardMapper mapper = Selma.builder(CardMapper.class).build();
 
     private CardService cardService;
 

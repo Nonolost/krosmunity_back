@@ -1,54 +1,29 @@
-package com.example.krosmunityBack.domain;
+package com.example.krosmunityBack.domain.DTO;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+public class CodeDTO {
 
-import static com.example.krosmunityBack.domain.CodeEntity.CODE_TABLE;
-
-@Entity
-@Table(name = CODE_TABLE)
-public class CodeEntity {
-    public static final String CODE_TABLE = "Code";
-
-
-    public static final String ID_COLUMN = "id";
-
-    public static final String CODE_COLUMN = "code";
-
-    public static final String SOURCE_COLUMN = "source";
-
-    public static final String SOURCE_URL_COLUMN = "source_url";
-
-    public static final String IS_ACTIVE_COLUMN = "is_active";
-
-    @Id
-    @Column(name = ID_COLUMN)
     int id;
 
-    @Column(name = CODE_COLUMN)
     String code;
 
-    @Column(name = SOURCE_COLUMN)
     String source;
 
-    @Column(name = SOURCE_URL_COLUMN)
     String sourceUrl;
 
-    @Column(name = IS_ACTIVE_COLUMN)
     boolean isActive;
 
-    public CodeEntity() {
+    public CodeDTO() {
     }
 
-    public CodeEntity(int id, String code, String source, String sourceUrl, boolean isActive) {
+
+    public CodeDTO(int id, String code, String source, String sourceUrl, boolean isActive) {
         this.id = id;
         this.code = code;
         this.source = source;
         this.sourceUrl = sourceUrl;
         this.isActive = isActive;
     }
+
 
     public int getId() {
         return id;
@@ -90,6 +65,3 @@ public class CodeEntity {
         isActive = active;
     }
 }
-
-
-
