@@ -84,7 +84,7 @@ public class CardEntity {
     @Column(name = IS_TOKEN_COLUMN)
     private boolean isToken;
 
-    @Column(name = IMAGE_LINK_COLUMN)
+    @Column(name = IMAGE_LINK_COLUMN, columnDefinition = "MEDIUMTEXT")
     private String imageLink;
 
 
