@@ -6,5 +6,4 @@ import java.util.List;
 
 public interface CodeService {
     List<CodeEntity> findAllActiveCodes();
-    void create();
 }

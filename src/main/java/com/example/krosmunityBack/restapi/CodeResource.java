@@ -1,7 +1,6 @@
 package com.example.krosmunityBack.restapi;
 
 import com.example.krosmunityBack.domain.DTO.CodeDTO;
-import com.example.krosmunityBack.domain.mapper.CardMapper;
 import com.example.krosmunityBack.domain.mapper.CodeMapper;
 import com.example.krosmunityBack.service.CodeService;
 import fr.xebia.extras.selma.Selma;
@@ -27,11 +26,5 @@ public class CodeResource {
     public List<CodeDTO> fetch() {
         return mapper.asCodeDTO(codeService.findAllActiveCodes());
     }
-
-    @GetMapping("/generate")
-    public void fetch2() {
-        codeService.create();
-    }
-
 
 }

@@ -18,10 +18,4 @@ public class CodeServiceImpl implements CodeService {
         return codeRepository.findAllByIsActive(true);
     }
 
-    public void create() {
-        codeRepository.save(new CodeEntity(1,"coucou1","facebook","https://www.facebook.com/arnaud.lods",true));
-        codeRepository.save(new CodeEntity(2,"coucou2","twitter","https://www.facebook.com/arnaud.lods",false));
-        codeRepository.save(new CodeEntity(3,"coucou3","facebook","https://www.facebook.com/arnaud.lods",true));
-
-    }
 }
