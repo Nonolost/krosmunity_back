@@ -2,25 +2,25 @@ package com.example.krosmunityBack.domain.DTO;
 
 public class TierListDTO {
 
-    int id;
+    private int id;
 
-    int god;
+    private int god;
 
-    String name;
+    private String name;
 
-    String author;
+    private String author;
 
-    String type;
+    private String type;
 
-    int tier;
+    private int tier;
 
-    float note;
+    private float note;
 
-    int kamasPrice;
+    private int kamasPrice;
 
-    int dustPrice;
+    private int dustPrice;
 
-    String krosbuilderLink;
+    private String krosbuilderLink;
 
     public TierListDTO() {
     }

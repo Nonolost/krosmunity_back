@@ -25,19 +25,19 @@ public class CodeEntity {
 
     @Id
     @Column(name = ID_COLUMN)
-    int id;
+    private int id;
 
     @Column(name = CODE_COLUMN)
-    String code;
+    private String code;
 
     @Column(name = SOURCE_COLUMN)
-    String source;
+    private String source;
 
     @Column(name = SOURCE_URL_COLUMN)
-    String sourceUrl;
+    private String sourceUrl;
 
     @Column(name = IS_ACTIVE_COLUMN)
-    boolean isActive;
+    private boolean isActive;
 
     public CodeEntity() {
     }

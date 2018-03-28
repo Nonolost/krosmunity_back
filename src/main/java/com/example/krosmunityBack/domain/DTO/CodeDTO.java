@@ -2,15 +2,15 @@ package com.example.krosmunityBack.domain.DTO;
 
 public class CodeDTO {
 
-    int id;
+    private int id;
 
-    String code;
+    private String code;
 
-    String source;
+    private String source;
 
-    String sourceUrl;
+    private String sourceUrl;
 
-    boolean isActive;
+    private boolean isActive;
 
     public CodeDTO() {
     }

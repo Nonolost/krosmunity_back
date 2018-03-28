@@ -36,34 +36,34 @@ public class TierListEntity {
 
     @Id
     @Column(name = ID_COLUMN)
-    int id;
+    private int id;
 
     @Column(name = GOD_COLUMN)
-    int god;
+    private int god;
 
     @Column(name = NAME_COLUMN)
-    String name;
+    private String name;
 
     @Column(name = AUTHOR_COLUMN)
-    String author;
+    private String author;
 
     @Column(name = TYPE_COLUMN)
-    String type;
+    private String type;
 
     @Column(name = TIER_COLUMN)
-    int tier;
+    private int tier;
 
     @Column(name = NOTE_COLUMN)
-    float note;
+    private float note;
 
     @Column(name = KAMAS_PRICE_COLUMN)
-    int kamasPrice;
+    private int kamasPrice;
 
     @Column(name = DUST_PRICE_COLUMN)
-    int dustPrice;
+    private int dustPrice;
 
     @Column(name = KROSBUILDER_LINK_COLUMN)
-    String krosbuilderLink;
+    private String krosbuilderLink;
 
     public TierListEntity(int id, int god, String name, String author, String type, int tier, float note, int kamasPrice, int dustPrice, String krosbuilderLink) {
         this.id = id;

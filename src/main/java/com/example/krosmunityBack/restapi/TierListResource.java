@@ -12,8 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/tierList")
+@RequestMapping(TierListResource.TIER_LIST_BASE_PATH)
 public class TierListResource {
+
+    public static final String TIER_LIST_BASE_PATH = "/tierList";
 
     TierListMapper tierListMapper = Selma.builder(TierListMapper.class).build();
 

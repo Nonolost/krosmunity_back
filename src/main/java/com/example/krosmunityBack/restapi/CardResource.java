@@ -30,8 +30,6 @@ public class CardResource {
 
     @PostMapping
     public List<CardDTO> fetch(@RequestBody CardFilter cardFilter) {
-        System.out.println(cardService.fetchWithSpecs(cardFilter).getContent());
-
         return mapper.asCardDTO(cardService.fetchWithSpecs(cardFilter).getContent());
     }
 
