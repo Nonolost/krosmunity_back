@@ -7,6 +7,7 @@ import com.example.krosmunityBack.service.CardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import static com.example.krosmunityBack.specification.CardSpecification.*;
@@ -19,7 +20,8 @@ public class CardServiceImpl implements CardService {
 
     @Override
     public Page<CardEntity> fetchWithSpecs(CardFilter cardFilter) {
-        return cardRepository.findAll(filterByIsSpell(cardFilter.getIsSpell())
+        return cardRepository.findAll(
+                filterByIsSpell(cardFilter.getIsSpell())
                         .and(filterByIsToken(cardFilter.getIsToken()))
                         .and(filterByHpGreaterThan(cardFilter.getHpGreaterThan()))
                         .and(filterByHpLessThan(cardFilter.getHpLessThan()))
@@ -36,6 +38,6 @@ public class CardServiceImpl implements CardService {
                         .and(filterByNameLikeContent(cardFilter.getContent())
                                 .or(filterByFamilyLikeContent(cardFilter.getContent()))
                                 .or(filterByDescriptionLikeContent(cardFilter.getContent())))
-                , PageRequest.of(cardFilter.getPageNumber(), cardFilter.getPageContent()));
+                , PageRequest.of(cardFilter.getPageNumber(), cardFilter.getPageContent(), Sort.Direction.ASC, "ap", "name"));
     }
 }
