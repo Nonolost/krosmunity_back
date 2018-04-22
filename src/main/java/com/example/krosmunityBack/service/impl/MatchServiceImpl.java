@@ -2,6 +2,8 @@ package com.example.krosmunityBack.service.impl;
 
 import com.example.krosmunityBack.repository.MatchRepository;
 import com.example.krosmunityBack.service.MatchService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,14 +13,19 @@ import java.util.List;
 @Service
 public class MatchServiceImpl implements MatchService {
 
+    private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
+
     @Autowired
     private MatchRepository matchRepository;
 
     public List<Object[]> countGodUsage(LocalDate localDate) {
+        LOGGER.debug("[MatchService - countGodUsage]");
         return matchRepository.countGodUsage(localDate);
     }
 
     public float[][] winAgainstMatrix(LocalDate localDate) {
+        LOGGER.debug("[MatchService - winAgainstMatrix]");
+
         int result[][] = new int[10][10];
         float result2[][] = new float[10][10];
         matchRepository.countWinLoss(localDate).stream().forEach((a) -> {
@@ -34,6 +41,7 @@ public class MatchServiceImpl implements MatchService {
     }
 
     public float[][] globalWinrate(LocalDate localDate) {
+        LOGGER.debug("[MatchService - globalWinrate]");
         List<Object[]> win = win(localDate);
         List<Object[]> loss = loss(localDate);
         float[][] res = new float[10][2];
@@ -47,10 +55,12 @@ public class MatchServiceImpl implements MatchService {
     }
 
     private List<Object[]> win(LocalDate localDate) {
+        LOGGER.debug("[MatchService - win]");
         return matchRepository.countGodWin(localDate);
     }
 
     private List<Object[]> loss(LocalDate localDate) {
+        LOGGER.debug("[MatchService - loss]");
         return matchRepository.countGodLoss(localDate);
     }
 

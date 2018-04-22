@@ -4,6 +4,8 @@ import com.example.krosmunityBack.domain.CardEntity;
 import com.example.krosmunityBack.domain.CardFilter;
 import com.example.krosmunityBack.repository.CardRepository;
 import com.example.krosmunityBack.service.CardService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -15,11 +17,14 @@ import static com.example.krosmunityBack.specification.CardSpecification.*;
 @Service
 public class CardServiceImpl implements CardService {
 
+    private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
+
     @Autowired
     CardRepository cardRepository;
 
     @Override
     public Page<CardEntity> fetchWithSpecs(CardFilter cardFilter) {
+        LOGGER.debug("[CardService - fetchWithSpecs]");
         return cardRepository.findAll(
                 filterByIsSpell(cardFilter.getIsSpell())
                         .and(filterByIsToken(cardFilter.getIsToken()))
